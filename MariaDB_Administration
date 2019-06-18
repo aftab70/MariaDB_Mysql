@@ -1,1 +1,35 @@
-#
+# How to create Database in MariaDB and mySQL
+
+CREATE DATABASE `DATABASE_NAME_HERE`;
+
+# How to create User in MariaDB and mySQL
+
+CREATE USER 'USER_NAME_HERE' IDENTIFIED BY 'PASSWORD_HERE';
+
+# Grant permissions to access and use the MySQL server
+
+GRANT USAGE ON *.* TO 'myuser'@localhost IDENTIFIED BY 'mypassword';
+
+# To allow access to MySQL server from any other computer on the network:
+
+GRANT USAGE ON *.* TO 'myuser'@'%' IDENTIFIED BY 'mypassword';
+
+# Grant all privileges to a user on a specific database
+
+GRANT ALL privileges ON `mydb`.* TO 'myuser'@localhost;
+
+# Apply changes made
+
+FLUSH PRIVILEGES;
+
+# Verify your new user has the right permissions
+
+SHOW GRANTS FOR 'myuser'@localhost;     
+
+# Drop a user from MariaDB and mySQL
+
+DROP USER myuser@localhost;
+
+# DROP a Database from MariaDB
+
+DROP DATABASE mydb;
