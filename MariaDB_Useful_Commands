@@ -1,1 +1,4 @@
-#
+# HOw to create database in mariaDB
+
+CREATE SCHEMA `DATABASE_NAME` DEFAULT CHARACTER SET utf8 ;
+
