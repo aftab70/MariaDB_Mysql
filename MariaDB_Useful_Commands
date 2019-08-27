@@ -2,8 +2,11 @@
 
 CREATE SCHEMA `DATABASE_NAME` DEFAULT CHARACTER SET utf8 ;
 
-#How to set mariadb password 
+# How to set mariadb password 
 
 /opt/mariadb1/mariadb1/bin/mysqladmin -S /opt/mariadb1/mariadb1-data/mariadb.sock -P 3307 -u root password 'YOUR_PASSWORD'
 
+# How to login in mariadb1
+
+/opt/mariadb1/mariadb1/bin/mysql -S /opt/mariadb1/mariadb1-data/mariadb.sock -P 3307 -u root -p
 
