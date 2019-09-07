@@ -12,16 +12,7 @@ SELECT table_schema AS "Database", SUM(data_length + index_length) / 1024 / 1024
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-# How to get specific database size in MySQL
-
-
-
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
 # How to get all tables size of database 
-
 
 SELECT 
     table_name AS "Table",  
