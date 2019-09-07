@@ -22,3 +22,23 @@ WHERE table_schema = "YOUR_DATABASE_NAME"
 ORDER BY size DESC; 
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+How get mysql table raw count uisng bash script 
+
+#!/bin/bash
+set -e
+
+NUMBER=$(cat table_name.txt | wc -l)
+echo ""
+echo "Total table cout is $NUMBER"
+echo ""
+N=1
+while [ $N -le $NUMBER ];do
+	TABLE_NAME=$(sed -n "$N"p table_name.txt)
+        QUERY="SELECT COUNT(*) FROM DATABASE_NAME.$TABLE_NAME"
+	echo "$TABLE_NAME"
+	mysql -u root -pYOUR_PASSWORD -e "$QUERY;"
+	N=$((N+1))	
+done 
+--------------------------------------------------------------------------------------------------------------------------------
+
