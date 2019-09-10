@@ -38,6 +38,8 @@ DROP DATABASE mydb;
 
 select user,host from mysql.user ;
 
+# How to grant specific permission of mysql user 
 
+GRANT SELECT ON `DATABASE_NAME`.* TO 'USER_NAME'@'localhost';
 
 
