@@ -33,3 +33,11 @@ DROP USER myuser@localhost;
 # DROP a Database from MariaDB
 
 DROP DATABASE mydb;
+
+# How to get user list from mariaDB/mysql 
+
+select user,host from mysql.user ;
+
+
+
+
