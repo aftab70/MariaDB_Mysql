@@ -42,4 +42,6 @@ select user,host from mysql.user ;
 
 GRANT SELECT ON `DATABASE_NAME`.* TO 'USER_NAME'@'localhost';
 
+GRANT SHOW DATABASES ON *.* TO 'USER_NAME'@'localhost';
+
 
