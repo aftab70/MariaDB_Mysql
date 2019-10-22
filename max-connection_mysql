@@ -1,0 +1,21 @@
+Check max_connections Value
+Max connections value are stored with variable named max_connections. Login to you mysql terminal with privileged user and execute following query.
+
+mysql> SHOW VARIABLES LIKE "max_connections";
+
++-----------------+-------+
+| Variable_name   | Value |
++-----------------+-------+
+| max_connections | 150   |
++-----------------+-------+
+1 row in set (0.00 sec)
+As per above output max_connections value is set to 150.
+
+Update max_connections Value
+Before increasing this value, make sure your server have enough resources to handle more queries. Now execute below query in mysql terminal to set this value temporarily. Remember that this value will reset on next mysql reboot.
+
+mysql> SET GLOBAL max_connections = 250;
+To set this value permanently, edit mysql configuration file on your server and set following variable. The configuration file location may change as per your operating system. By default you can find this at /etc/my.cnf on CentOS and RHEL based system and /etc/mysql/my.cnf on Debian based system.
+
+  max_connections = 250
+Now restart mysql service and check value again with above given command. This time you will see that value is set to 250.
