@@ -44,6 +44,26 @@ GRANT SELECT ON `DATABASE_NAME`.* TO 'USER_NAME'@'localhost';
 
 GRANT SHOW DATABASES ON *.* TO 'USER_NAME'@'localhost';
 
+#################################################################################################################################################################
+
+Show Users In MySQL
+Show all MySQL users:
+
+mysql> SELECT user FROM mysql.user;
+List only unique user names:
+
+mysql> SELECT DISTINCT user FROM mysql.user;
+Show MySQL users and hosts they are allowed to connect from:
+
+mysql> SELECT user,host FROM mysql.user;
+Show MySQL users, their passwords and hosts:
+
+mysql> SELECT user,host,password FROM mysql.user;
+in MySQL 5.7 and higher:
+
+mysql> SELECT host,user,authentication_string FROM mysql.user;
+
+
 
 ################################################################################################################################################################
 
