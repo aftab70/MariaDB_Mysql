@@ -90,3 +90,31 @@ To delete a user account, use the following command:
 DROP USER 'database_user@'localhost';
 
 ##################################################################################################################################################################
+
+On Master MariaDB
+
+CREATE USER 'database_user'@'192.168.0.%' IDENTIFIED BY 'password';
+
+SHOW GRANTS FOR 'database_user'@'192.168.0.%' ;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON `VRITI_LOCAL`.* TO 'database_user'@'192.168.0.%' ;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON `VRITI_ADMIN_LOCAL`.* TO 'database_user'@'192.168.0.%' ;
+
+FLUSH PRIVILEGES;
+
+
+On Slave MariaDB Server
+
+
+CREATE USER 'database_user'@'192.168.0.%' IDENTIFIED BY 'password';
+
+SHOW GRANTS FOR 'database_user'@'192.168.0.%' ;
+
+GRANT SELECT ON `VRITI_LOCAL`.* TO 'database_user'@'192.168.0.%';
+
+GRANT SELECT ON `VRITI_ADMIN_LOCAL`.* TO 'database_user'@'192.168.0.%';
+
+SHOW GRANTS FOR 'database_user'@'192.168.0.%' ;
+
+FLUSH PRIVILEGES;
