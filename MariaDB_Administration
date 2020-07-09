@@ -45,3 +45,21 @@ GRANT SELECT ON `DATABASE_NAME`.* TO 'USER_NAME'@'localhost';
 GRANT SHOW DATABASES ON *.* TO 'USER_NAME'@'localhost';
 
 
+################################################################################################################################################################
+
+Show privileges granted to the current MySQL user:
+
+mysql> SHOW GRANTS;
+Show privileges granted to the MySQL user (if you don’t specify a host for the user name, MySQL assumes % as the host):
+
+mysql> SHOW GRANTS FOR 'user_name';
+Show privileges granted to a particular MySQL user account from a given host:
+
+mysql> SHOW GRANTS FOR 'user_name'@'host';
+– e.g. –
+
+mysql> SHOW GRANTS FOR 'root'@'localhost';
+mysql> SHOW GRANTS FOR 'root'@'%';
+mysql> SHOW GRANTS FOR 'admin'@'192.168.0.1';
+
+#################################################################################################################################################################
