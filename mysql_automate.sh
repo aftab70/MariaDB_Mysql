@@ -1,3 +1,7 @@
+# for mysql server, this script required root privileges.
+
+vim mysql_server.sh
+
 #!/bin/bash
 
 PASS="password"
@@ -12,3 +16,7 @@ mysql -u root -p"$PASS" -e "show databases;"
 mysql -u root -p"$PASS" -e "CREATE USER 'root' IDENTIFIED BY 'password';"
 mysql -u root -p"$PASS" -e "GRANT USAGE ON *.* TO 'root'@'%' IDENTIFIED BY 'password';"
 mysql -u root -p"$PASS" -e "FLUSH PRIVILEGES;"
+
+# script execution 
+
+sh mysql_server.sh
