@@ -1,0 +1,37 @@
+
+
+
+# Step 1: Setup the SQL database server using Terrafrom script..
+# Step 2: Take git clone of SpringBoot with SQL connectivty.
+
+git clone https://github.com/gustafc/spring-boot-jdbc-mssql
+
+# Step 3: Change the SQL dependicies in POM.xml like given code.
+
+<dependency>
+    <groupId>com.microsoft.sqlserver</groupId>
+    <artifactId>mssql-jdbc</artifactId>
+    <version>6.1.0.jre8</version>
+</dependency> 
+
+# Step 4: Update the SQL server creds in application.properties_example file and you need o rename it.
+
+cp application.properties_example application.properties
+
+vim application.properties
+
+spring.datasource.url=jdbc:sqlserver://aftab.database.windows.net:1433;database=<DATABASE-NAME-HERE>;user=<USERNAME-HERE>@aftab;password=<PASSWORD_HERE>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+
+Save and exit from your favourite editor.
+
+#Step 5: Go to base directoory of the Spring boot project and execute the command.
+
+mvn package
+
+#After buid the project, Lets execte the jar file by following the command.
+
+java -jar target/sb-jdbc-lab-0.0.1-SNAPSHOT.jar
+
+#Step 5: Testing 
+
+#Open the browser with http://104.41.140.233:8080/dbtest and hit database testing link.
