@@ -1,0 +1,5 @@
+CREATE USER 'exporter'@'192.168.1.2' IDENTIFIED BY 'password';
+GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'exporter'@'192.168.1.2' WITH MAX_USER_CONNECTIONS 3;
+commit;
+FLUSH PRIVILEGES;
+select User,Host,authentication_string,Password from mysql.user;
